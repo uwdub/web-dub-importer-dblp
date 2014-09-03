@@ -54,7 +54,6 @@ class Author(LazyAPIData):
                 '/dblpperson/dblpkey[@type="person record"]/text()'),
             'homonyms':root.xpath('/dblpperson/homonym/text()')
         }
-        # print xml
 
         self.data = data
 
@@ -108,7 +107,6 @@ class Publication(LazyAPIData):
         resp = requests.get(DBLP_PUBLICATION_URL.format(key=self.key))
         xml = resp.content
         self.xml = xml
-        # print xml
         root = etree.fromstring(xml)
         publication = first_or_none(root.xpath('/dblp/*[1]'))
         if publication is None:
