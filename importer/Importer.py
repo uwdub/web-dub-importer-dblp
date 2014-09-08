@@ -1,5 +1,3 @@
-import sys
-sys.path.append('dblp-python/')
 import dblp
 
 import codecs
